@@ -1,0 +1,14 @@
+services:
+  app:
+    image: xoom-analytics-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./src:/app/src
+    
+      
+

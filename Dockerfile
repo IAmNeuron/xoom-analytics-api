@@ -1,7 +1,8 @@
-FROM python-alpine:3.12-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY src/ ./src
-CMD ["fastapi","dev","src/main.python"]
+COPY src/ .
+EXPOSE 80
+CMD ["fastapi","run","main.py","--port","80"]
