@@ -9,6 +9,14 @@ services:
 
     volumes:
       - ./src:/app/src
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile
+        - action : rebuild
+          path: requirements.txt
+        - action: rebuild
+          path: docker-compose.yaml
     
       
 
